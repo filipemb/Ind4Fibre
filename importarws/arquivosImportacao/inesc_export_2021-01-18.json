@@ -1,0 +1,1286 @@
+{
+    "Armazenamento": [
+        {
+            "_id": "600635b68d706c2c0ba9de08",
+            "timestamp": "2021-01-18 22:28:22.981253",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635b78d706c2c0ba9de0a",
+            "timestamp": "2021-01-18 22:28:23.226509",
+            "topic": "umidade",
+            "value": "84.10"
+        },
+        {
+            "_id": "600635b78d706c2c0ba9de0c",
+            "timestamp": "2021-01-18 22:28:23.229276",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635bc8d706c2c0ba9de1a",
+            "timestamp": "2021-01-18 22:28:28.112843",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635bc8d706c2c0ba9de1c",
+            "timestamp": "2021-01-18 22:28:28.170116",
+            "topic": "umidade",
+            "value": "84.10"
+        },
+        {
+            "_id": "600635bc8d706c2c0ba9de1e",
+            "timestamp": "2021-01-18 22:28:28.173055",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635c18d706c2c0ba9de2c",
+            "timestamp": "2021-01-18 22:28:33.253373",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635c18d706c2c0ba9de2e",
+            "timestamp": "2021-01-18 22:28:33.466945",
+            "topic": "umidade",
+            "value": "84.10"
+        },
+        {
+            "_id": "600635c18d706c2c0ba9de30",
+            "timestamp": "2021-01-18 22:28:33.469684",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635c68d706c2c0ba9de3e",
+            "timestamp": "2021-01-18 22:28:38.378386",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635c68d706c2c0ba9de40",
+            "timestamp": "2021-01-18 22:28:38.685867",
+            "topic": "umidade",
+            "value": "84.20"
+        },
+        {
+            "_id": "600635c68d706c2c0ba9de42",
+            "timestamp": "2021-01-18 22:28:38.688738",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635cb8d706c2c0ba9de50",
+            "timestamp": "2021-01-18 22:28:43.510562",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635cb8d706c2c0ba9de52",
+            "timestamp": "2021-01-18 22:28:43.743360",
+            "topic": "umidade",
+            "value": "84.20"
+        },
+        {
+            "_id": "600635cb8d706c2c0ba9de54",
+            "timestamp": "2021-01-18 22:28:43.746118",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635d08d706c2c0ba9de62",
+            "timestamp": "2021-01-18 22:28:48.637596",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600635d08d706c2c0ba9de64",
+            "timestamp": "2021-01-18 22:28:48.844485",
+            "topic": "umidade",
+            "value": "84.00"
+        },
+        {
+            "_id": "600635d08d706c2c0ba9de66",
+            "timestamp": "2021-01-18 22:28:48.847717",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635d58d706c2c0ba9de74",
+            "timestamp": "2021-01-18 22:28:53.752518",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635d58d706c2c0ba9de76",
+            "timestamp": "2021-01-18 22:28:53.808453",
+            "topic": "umidade",
+            "value": "84.20"
+        },
+        {
+            "_id": "600635d58d706c2c0ba9de78",
+            "timestamp": "2021-01-18 22:28:53.811344",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635da8d706c2c0ba9de86",
+            "timestamp": "2021-01-18 22:28:58.880272",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600635da8d706c2c0ba9de88",
+            "timestamp": "2021-01-18 22:28:58.931238",
+            "topic": "umidade",
+            "value": "84.10"
+        },
+        {
+            "_id": "600635da8d706c2c0ba9de8a",
+            "timestamp": "2021-01-18 22:28:58.934111",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635e08d706c2c0ba9de98",
+            "timestamp": "2021-01-18 22:29:04.009810",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600635e08d706c2c0ba9de9a",
+            "timestamp": "2021-01-18 22:29:04.196218",
+            "topic": "umidade",
+            "value": "84.10"
+        },
+        {
+            "_id": "600635e08d706c2c0ba9de9c",
+            "timestamp": "2021-01-18 22:29:04.199194",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635e58d706c2c0ba9deaa",
+            "timestamp": "2021-01-18 22:29:09.143146",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600635e58d706c2c0ba9deac",
+            "timestamp": "2021-01-18 22:29:09.194138",
+            "topic": "umidade",
+            "value": "84.10"
+        },
+        {
+            "_id": "600635e58d706c2c0ba9deae",
+            "timestamp": "2021-01-18 22:29:09.197406",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635ea8d706c2c0ba9debc",
+            "timestamp": "2021-01-18 22:29:14.266357",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635ea8d706c2c0ba9debe",
+            "timestamp": "2021-01-18 22:29:14.316484",
+            "topic": "umidade",
+            "value": "84.30"
+        },
+        {
+            "_id": "600635ea8d706c2c0ba9dec0",
+            "timestamp": "2021-01-18 22:29:14.319319",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635ef8d706c2c0ba9dece",
+            "timestamp": "2021-01-18 22:29:19.394836",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635ef8d706c2c0ba9ded0",
+            "timestamp": "2021-01-18 22:29:19.446949",
+            "topic": "umidade",
+            "value": "84.30"
+        },
+        {
+            "_id": "600635ef8d706c2c0ba9ded2",
+            "timestamp": "2021-01-18 22:29:19.449705",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635f48d706c2c0ba9dee0",
+            "timestamp": "2021-01-18 22:29:24.532560",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600635f48d706c2c0ba9dee2",
+            "timestamp": "2021-01-18 22:29:24.588505",
+            "topic": "umidade",
+            "value": "84.30"
+        },
+        {
+            "_id": "600635f48d706c2c0ba9dee4",
+            "timestamp": "2021-01-18 22:29:24.591247",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635f98d706c2c0ba9def2",
+            "timestamp": "2021-01-18 22:29:29.652664",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600635fa8d706c2c0ba9def4",
+            "timestamp": "2021-01-18 22:29:30.394417",
+            "topic": "umidade",
+            "value": "84.30"
+        },
+        {
+            "_id": "600635fa8d706c2c0ba9def6",
+            "timestamp": "2021-01-18 22:29:30.397588",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635fe8d706c2c0ba9df04",
+            "timestamp": "2021-01-18 22:29:34.780910",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600635fe8d706c2c0ba9df06",
+            "timestamp": "2021-01-18 22:29:34.832370",
+            "topic": "umidade",
+            "value": "84.30"
+        },
+        {
+            "_id": "600635fe8d706c2c0ba9df08",
+            "timestamp": "2021-01-18 22:29:34.835453",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636038d706c2c0ba9df16",
+            "timestamp": "2021-01-18 22:29:39.910481",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600636038d706c2c0ba9df18",
+            "timestamp": "2021-01-18 22:29:39.963530",
+            "topic": "umidade",
+            "value": "84.30"
+        },
+        {
+            "_id": "600636038d706c2c0ba9df1a",
+            "timestamp": "2021-01-18 22:29:39.966332",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636098d706c2c0ba9df28",
+            "timestamp": "2021-01-18 22:29:45.037336",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600636098d706c2c0ba9df2a",
+            "timestamp": "2021-01-18 22:29:45.641813",
+            "topic": "umidade",
+            "value": "84.30"
+        },
+        {
+            "_id": "600636098d706c2c0ba9df2c",
+            "timestamp": "2021-01-18 22:29:45.644673",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "6006360e8d706c2c0ba9df3a",
+            "timestamp": "2021-01-18 22:29:50.167408",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "6006360e8d706c2c0ba9df3c",
+            "timestamp": "2021-01-18 22:29:50.218164",
+            "topic": "umidade",
+            "value": "84.40"
+        },
+        {
+            "_id": "6006360e8d706c2c0ba9df3e",
+            "timestamp": "2021-01-18 22:29:50.221113",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636138d706c2c0ba9df4c",
+            "timestamp": "2021-01-18 22:29:55.295449",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600636138d706c2c0ba9df4e",
+            "timestamp": "2021-01-18 22:29:55.347540",
+            "topic": "umidade",
+            "value": "84.40"
+        },
+        {
+            "_id": "600636138d706c2c0ba9df50",
+            "timestamp": "2021-01-18 22:29:55.350325",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636188d706c2c0ba9df5e",
+            "timestamp": "2021-01-18 22:30:00.424085",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600636188d706c2c0ba9df60",
+            "timestamp": "2021-01-18 22:30:00.474992",
+            "topic": "umidade",
+            "value": "84.40"
+        },
+        {
+            "_id": "600636188d706c2c0ba9df62",
+            "timestamp": "2021-01-18 22:30:00.477967",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "6006361d8d706c2c0ba9df70",
+            "timestamp": "2021-01-18 22:30:05.557353",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "6006361d8d706c2c0ba9df72",
+            "timestamp": "2021-01-18 22:30:05.611623",
+            "topic": "umidade",
+            "value": "84.40"
+        },
+        {
+            "_id": "6006361d8d706c2c0ba9df74",
+            "timestamp": "2021-01-18 22:30:05.614433",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636228d706c2c0ba9df82",
+            "timestamp": "2021-01-18 22:30:10.718434",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600636228d706c2c0ba9df84",
+            "timestamp": "2021-01-18 22:30:10.740757",
+            "topic": "umidade",
+            "value": "84.50"
+        },
+        {
+            "_id": "600636228d706c2c0ba9df86",
+            "timestamp": "2021-01-18 22:30:10.743523",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636278d706c2c0ba9df94",
+            "timestamp": "2021-01-18 22:30:15.815540",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "600636278d706c2c0ba9df96",
+            "timestamp": "2021-01-18 22:30:15.866762",
+            "topic": "umidade",
+            "value": "84.40"
+        },
+        {
+            "_id": "600636278d706c2c0ba9df98",
+            "timestamp": "2021-01-18 22:30:15.869500",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "6006362c8d706c2c0ba9dfa6",
+            "timestamp": "2021-01-18 22:30:20.941004",
+            "topic": "temperatura",
+            "value": "23.40"
+        },
+        {
+            "_id": "6006362d8d706c2c0ba9dfa8",
+            "timestamp": "2021-01-18 22:30:21.073271",
+            "topic": "umidade",
+            "value": "84.40"
+        },
+        {
+            "_id": "6006362d8d706c2c0ba9dfaa",
+            "timestamp": "2021-01-18 22:30:21.076963",
+            "topic": "iluminacao",
+            "value": "0.00"
+        }
+    ],
+    "Imp3D": [
+        {
+            "_id": "600635b78d706c2c0ba9de0e",
+            "timestamp": "2021-01-18 22:28:23.946682",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635b78d706c2c0ba9de10",
+            "timestamp": "2021-01-18 22:28:23.998116",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635b88d706c2c0ba9de12",
+            "timestamp": "2021-01-18 22:28:24.001266",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635bd8d706c2c0ba9de20",
+            "timestamp": "2021-01-18 22:28:29.072379",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635bd8d706c2c0ba9de22",
+            "timestamp": "2021-01-18 22:28:29.197593",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635bd8d706c2c0ba9de24",
+            "timestamp": "2021-01-18 22:28:29.200454",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635c28d706c2c0ba9de32",
+            "timestamp": "2021-01-18 22:28:34.198264",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635c28d706c2c0ba9de34",
+            "timestamp": "2021-01-18 22:28:34.383306",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635c28d706c2c0ba9de36",
+            "timestamp": "2021-01-18 22:28:34.386110",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635c78d706c2c0ba9de44",
+            "timestamp": "2021-01-18 22:28:39.479172",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635c78d706c2c0ba9de46",
+            "timestamp": "2021-01-18 22:28:39.482166",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635c78d706c2c0ba9de48",
+            "timestamp": "2021-01-18 22:28:39.484845",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635cc8d706c2c0ba9de56",
+            "timestamp": "2021-01-18 22:28:44.711766",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635cc8d706c2c0ba9de58",
+            "timestamp": "2021-01-18 22:28:44.714898",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635cc8d706c2c0ba9de5a",
+            "timestamp": "2021-01-18 22:28:44.717612",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635d18d706c2c0ba9de68",
+            "timestamp": "2021-01-18 22:28:49.585889",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635d18d706c2c0ba9de6a",
+            "timestamp": "2021-01-18 22:28:49.861205",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635d18d706c2c0ba9de6c",
+            "timestamp": "2021-01-18 22:28:49.864107",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635d68d706c2c0ba9de7a",
+            "timestamp": "2021-01-18 22:28:54.712881",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635d68d706c2c0ba9de7c",
+            "timestamp": "2021-01-18 22:28:54.973356",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635d68d706c2c0ba9de7e",
+            "timestamp": "2021-01-18 22:28:54.976410",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635db8d706c2c0ba9de8c",
+            "timestamp": "2021-01-18 22:28:59.841829",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635db8d706c2c0ba9de8e",
+            "timestamp": "2021-01-18 22:28:59.889413",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635db8d706c2c0ba9de90",
+            "timestamp": "2021-01-18 22:28:59.892250",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635e08d706c2c0ba9de9e",
+            "timestamp": "2021-01-18 22:29:04.975420",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635e18d706c2c0ba9dea0",
+            "timestamp": "2021-01-18 22:29:05.027463",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635e18d706c2c0ba9dea2",
+            "timestamp": "2021-01-18 22:29:05.030342",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635e68d706c2c0ba9deb0",
+            "timestamp": "2021-01-18 22:29:10.099995",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635e68d706c2c0ba9deb2",
+            "timestamp": "2021-01-18 22:29:10.208293",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635e68d706c2c0ba9deb4",
+            "timestamp": "2021-01-18 22:29:10.211076",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635eb8d706c2c0ba9dec2",
+            "timestamp": "2021-01-18 22:29:15.227754",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635eb8d706c2c0ba9dec4",
+            "timestamp": "2021-01-18 22:29:15.276506",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635eb8d706c2c0ba9dec6",
+            "timestamp": "2021-01-18 22:29:15.279163",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635f08d706c2c0ba9ded4",
+            "timestamp": "2021-01-18 22:29:20.949178",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635f08d706c2c0ba9ded6",
+            "timestamp": "2021-01-18 22:29:20.952353",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635f08d706c2c0ba9ded8",
+            "timestamp": "2021-01-18 22:29:20.955011",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635f58d706c2c0ba9dee6",
+            "timestamp": "2021-01-18 22:29:25.489407",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635f58d706c2c0ba9dee8",
+            "timestamp": "2021-01-18 22:29:25.539039",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635f58d706c2c0ba9deea",
+            "timestamp": "2021-01-18 22:29:25.541739",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635fa8d706c2c0ba9def8",
+            "timestamp": "2021-01-18 22:29:30.628912",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635fa8d706c2c0ba9defa",
+            "timestamp": "2021-01-18 22:29:30.699507",
+            "topic": "umidade",
+            "value": "93.20"
+        },
+        {
+            "_id": "600635fa8d706c2c0ba9defc",
+            "timestamp": "2021-01-18 22:29:30.702353",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600635ff8d706c2c0ba9df0a",
+            "timestamp": "2021-01-18 22:29:35.743834",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600635ff8d706c2c0ba9df0c",
+            "timestamp": "2021-01-18 22:29:35.793469",
+            "topic": "umidade",
+            "value": "93.40"
+        },
+        {
+            "_id": "600635ff8d706c2c0ba9df0e",
+            "timestamp": "2021-01-18 22:29:35.796642",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636048d706c2c0ba9df1c",
+            "timestamp": "2021-01-18 22:29:40.873357",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600636048d706c2c0ba9df1e",
+            "timestamp": "2021-01-18 22:29:40.921130",
+            "topic": "umidade",
+            "value": "93.30"
+        },
+        {
+            "_id": "600636048d706c2c0ba9df20",
+            "timestamp": "2021-01-18 22:29:40.924077",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "6006360a8d706c2c0ba9df2e",
+            "timestamp": "2021-01-18 22:29:46.000809",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "6006360a8d706c2c0ba9df30",
+            "timestamp": "2021-01-18 22:29:46.051291",
+            "topic": "umidade",
+            "value": "93.30"
+        },
+        {
+            "_id": "6006360a8d706c2c0ba9df32",
+            "timestamp": "2021-01-18 22:29:46.054902",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "6006360f8d706c2c0ba9df40",
+            "timestamp": "2021-01-18 22:29:51.129490",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "6006360f8d706c2c0ba9df42",
+            "timestamp": "2021-01-18 22:29:51.178119",
+            "topic": "umidade",
+            "value": "93.30"
+        },
+        {
+            "_id": "6006360f8d706c2c0ba9df44",
+            "timestamp": "2021-01-18 22:29:51.181047",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636148d706c2c0ba9df52",
+            "timestamp": "2021-01-18 22:29:56.258540",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600636148d706c2c0ba9df54",
+            "timestamp": "2021-01-18 22:29:56.306457",
+            "topic": "umidade",
+            "value": "93.30"
+        },
+        {
+            "_id": "600636148d706c2c0ba9df56",
+            "timestamp": "2021-01-18 22:29:56.309244",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636198d706c2c0ba9df64",
+            "timestamp": "2021-01-18 22:30:01.386369",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600636198d706c2c0ba9df66",
+            "timestamp": "2021-01-18 22:30:01.436050",
+            "topic": "umidade",
+            "value": "93.30"
+        },
+        {
+            "_id": "600636198d706c2c0ba9df68",
+            "timestamp": "2021-01-18 22:30:01.438895",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "6006361e8d706c2c0ba9df76",
+            "timestamp": "2021-01-18 22:30:06.514900",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "6006361e8d706c2c0ba9df78",
+            "timestamp": "2021-01-18 22:30:06.564115",
+            "topic": "umidade",
+            "value": "93.30"
+        },
+        {
+            "_id": "6006361e8d706c2c0ba9df7a",
+            "timestamp": "2021-01-18 22:30:06.566933",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636238d706c2c0ba9df88",
+            "timestamp": "2021-01-18 22:30:11.643848",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600636238d706c2c0ba9df8a",
+            "timestamp": "2021-01-18 22:30:11.691149",
+            "topic": "umidade",
+            "value": "93.30"
+        },
+        {
+            "_id": "600636238d706c2c0ba9df8c",
+            "timestamp": "2021-01-18 22:30:11.693915",
+            "topic": "iluminacao",
+            "value": "0.00"
+        },
+        {
+            "_id": "600636288d706c2c0ba9df9a",
+            "timestamp": "2021-01-18 22:30:16.811837",
+            "topic": "temperatura",
+            "value": "23.50"
+        },
+        {
+            "_id": "600636288d706c2c0ba9df9c",
+            "timestamp": "2021-01-18 22:30:16.818528",
+            "topic": "umidade",
+            "value": "93.30"
+        },
+        {
+            "_id": "600636288d706c2c0ba9df9e",
+            "timestamp": "2021-01-18 22:30:16.821339",
+            "topic": "iluminacao",
+            "value": "0.00"
+        }
+    ],
+    "Sala": [
+        {
+            "_id": "600635b68d706c2c0ba9de02",
+            "timestamp": "2021-01-18 22:28:22.529852",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635b68d706c2c0ba9de04",
+            "timestamp": "2021-01-18 22:28:22.704548",
+            "topic": "umidade",
+            "value": "83.00"
+        },
+        {
+            "_id": "600635b68d706c2c0ba9de06",
+            "timestamp": "2021-01-18 22:28:22.707349",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635bb8d706c2c0ba9de14",
+            "timestamp": "2021-01-18 22:28:27.658968",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635bb8d706c2c0ba9de16",
+            "timestamp": "2021-01-18 22:28:27.716980",
+            "topic": "umidade",
+            "value": "83.00"
+        },
+        {
+            "_id": "600635bb8d706c2c0ba9de18",
+            "timestamp": "2021-01-18 22:28:27.719630",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635c08d706c2c0ba9de26",
+            "timestamp": "2021-01-18 22:28:32.805462",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635c18d706c2c0ba9de28",
+            "timestamp": "2021-01-18 22:28:33.052613",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635c18d706c2c0ba9de2a",
+            "timestamp": "2021-01-18 22:28:33.055531",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635c58d706c2c0ba9de38",
+            "timestamp": "2021-01-18 22:28:37.930876",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635c68d706c2c0ba9de3a",
+            "timestamp": "2021-01-18 22:28:38.177187",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635c68d706c2c0ba9de3c",
+            "timestamp": "2021-01-18 22:28:38.180082",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635cb8d706c2c0ba9de4a",
+            "timestamp": "2021-01-18 22:28:43.046307",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635cb8d706c2c0ba9de4c",
+            "timestamp": "2021-01-18 22:28:43.108329",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635cb8d706c2c0ba9de4e",
+            "timestamp": "2021-01-18 22:28:43.111200",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635d08d706c2c0ba9de5c",
+            "timestamp": "2021-01-18 22:28:48.172876",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635d08d706c2c0ba9de5e",
+            "timestamp": "2021-01-18 22:28:48.241890",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635d08d706c2c0ba9de60",
+            "timestamp": "2021-01-18 22:28:48.244710",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635d58d706c2c0ba9de6e",
+            "timestamp": "2021-01-18 22:28:53.321760",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635d58d706c2c0ba9de70",
+            "timestamp": "2021-01-18 22:28:53.648081",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635d58d706c2c0ba9de72",
+            "timestamp": "2021-01-18 22:28:53.651556",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635da8d706c2c0ba9de80",
+            "timestamp": "2021-01-18 22:28:58.428591",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635da8d706c2c0ba9de82",
+            "timestamp": "2021-01-18 22:28:58.477310",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635da8d706c2c0ba9de84",
+            "timestamp": "2021-01-18 22:28:58.480054",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635df8d706c2c0ba9de92",
+            "timestamp": "2021-01-18 22:29:03.558597",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635df8d706c2c0ba9de94",
+            "timestamp": "2021-01-18 22:29:03.705532",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635df8d706c2c0ba9de96",
+            "timestamp": "2021-01-18 22:29:03.709291",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635e48d706c2c0ba9dea4",
+            "timestamp": "2021-01-18 22:29:08.685962",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635e48d706c2c0ba9dea6",
+            "timestamp": "2021-01-18 22:29:08.734216",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635e48d706c2c0ba9dea8",
+            "timestamp": "2021-01-18 22:29:08.737107",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635e98d706c2c0ba9deb6",
+            "timestamp": "2021-01-18 22:29:13.816466",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635e98d706c2c0ba9deb8",
+            "timestamp": "2021-01-18 22:29:13.869139",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635e98d706c2c0ba9deba",
+            "timestamp": "2021-01-18 22:29:13.871894",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635ee8d706c2c0ba9dec8",
+            "timestamp": "2021-01-18 22:29:18.943412",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635ef8d706c2c0ba9deca",
+            "timestamp": "2021-01-18 22:29:19.123556",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635ef8d706c2c0ba9decc",
+            "timestamp": "2021-01-18 22:29:19.126361",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635f48d706c2c0ba9deda",
+            "timestamp": "2021-01-18 22:29:24.072593",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635f48d706c2c0ba9dedc",
+            "timestamp": "2021-01-18 22:29:24.122527",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635f48d706c2c0ba9dede",
+            "timestamp": "2021-01-18 22:29:24.125323",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635f98d706c2c0ba9deec",
+            "timestamp": "2021-01-18 22:29:29.201591",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635f98d706c2c0ba9deee",
+            "timestamp": "2021-01-18 22:29:29.250076",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635f98d706c2c0ba9def0",
+            "timestamp": "2021-01-18 22:29:29.252898",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600635fe8d706c2c0ba9defe",
+            "timestamp": "2021-01-18 22:29:34.331854",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600635fe8d706c2c0ba9df00",
+            "timestamp": "2021-01-18 22:29:34.381035",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600635fe8d706c2c0ba9df02",
+            "timestamp": "2021-01-18 22:29:34.383908",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600636038d706c2c0ba9df10",
+            "timestamp": "2021-01-18 22:29:39.458009",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600636038d706c2c0ba9df12",
+            "timestamp": "2021-01-18 22:29:39.506812",
+            "topic": "umidade",
+            "value": "83.20"
+        },
+        {
+            "_id": "600636038d706c2c0ba9df14",
+            "timestamp": "2021-01-18 22:29:39.509582",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600636088d706c2c0ba9df22",
+            "timestamp": "2021-01-18 22:29:44.586769",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600636088d706c2c0ba9df24",
+            "timestamp": "2021-01-18 22:29:44.639610",
+            "topic": "umidade",
+            "value": "83.10"
+        },
+        {
+            "_id": "600636088d706c2c0ba9df26",
+            "timestamp": "2021-01-18 22:29:44.642450",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "6006360d8d706c2c0ba9df34",
+            "timestamp": "2021-01-18 22:29:49.715727",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "6006360d8d706c2c0ba9df36",
+            "timestamp": "2021-01-18 22:29:49.763305",
+            "topic": "umidade",
+            "value": "83.20"
+        },
+        {
+            "_id": "6006360d8d706c2c0ba9df38",
+            "timestamp": "2021-01-18 22:29:49.766130",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600636128d706c2c0ba9df46",
+            "timestamp": "2021-01-18 22:29:54.844021",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600636128d706c2c0ba9df48",
+            "timestamp": "2021-01-18 22:29:54.891703",
+            "topic": "umidade",
+            "value": "83.20"
+        },
+        {
+            "_id": "600636128d706c2c0ba9df4a",
+            "timestamp": "2021-01-18 22:29:54.894784",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600636178d706c2c0ba9df58",
+            "timestamp": "2021-01-18 22:29:59.972308",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600636188d706c2c0ba9df5a",
+            "timestamp": "2021-01-18 22:30:00.022621",
+            "topic": "umidade",
+            "value": "83.20"
+        },
+        {
+            "_id": "600636188d706c2c0ba9df5c",
+            "timestamp": "2021-01-18 22:30:00.025645",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "6006361d8d706c2c0ba9df6a",
+            "timestamp": "2021-01-18 22:30:05.100690",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "6006361d8d706c2c0ba9df6c",
+            "timestamp": "2021-01-18 22:30:05.149189",
+            "topic": "umidade",
+            "value": "83.20"
+        },
+        {
+            "_id": "6006361d8d706c2c0ba9df6e",
+            "timestamp": "2021-01-18 22:30:05.152000",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600636228d706c2c0ba9df7c",
+            "timestamp": "2021-01-18 22:30:10.229597",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600636228d706c2c0ba9df7e",
+            "timestamp": "2021-01-18 22:30:10.278149",
+            "topic": "umidade",
+            "value": "83.20"
+        },
+        {
+            "_id": "600636228d706c2c0ba9df80",
+            "timestamp": "2021-01-18 22:30:10.280921",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "600636278d706c2c0ba9df8e",
+            "timestamp": "2021-01-18 22:30:15.362209",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "600636278d706c2c0ba9df90",
+            "timestamp": "2021-01-18 22:30:15.410940",
+            "topic": "umidade",
+            "value": "83.20"
+        },
+        {
+            "_id": "600636278d706c2c0ba9df92",
+            "timestamp": "2021-01-18 22:30:15.413726",
+            "topic": "iluminacao",
+            "value": "2.00"
+        },
+        {
+            "_id": "6006362c8d706c2c0ba9dfa0",
+            "timestamp": "2021-01-18 22:30:20.486853",
+            "topic": "temperatura",
+            "value": "24.00"
+        },
+        {
+            "_id": "6006362c8d706c2c0ba9dfa2",
+            "timestamp": "2021-01-18 22:30:20.662727",
+            "topic": "umidade",
+            "value": "83.20"
+        },
+        {
+            "_id": "6006362c8d706c2c0ba9dfa4",
+            "timestamp": "2021-01-18 22:30:20.665508",
+            "topic": "iluminacao",
+            "value": "2.00"
+        }
+    ]
+}
