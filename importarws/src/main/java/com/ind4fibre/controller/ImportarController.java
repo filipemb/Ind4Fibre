@@ -3,7 +3,12 @@ package com.ind4fibre.controller;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,6 +25,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ind4fibre.database.model.AlarmeBraco;
+import com.ind4fibre.database.model.BracoRobotico;
+import com.ind4fibre.database.model.LeituraBraco;
+import com.ind4fibre.database.model.Recurso;
+import com.ind4fibre.database.model.Sensor;
+import com.ind4fibre.database.repository.AlarmeBracoRepository;
+import com.ind4fibre.database.repository.BracoRoboticoRepository;
+import com.ind4fibre.database.repository.LeituraBracoRepository;
+import com.ind4fibre.database.repository.RecursoRepository;
+import com.ind4fibre.database.repository.SensorRepository;
 import com.ind4fibre.ftp.FTPService;
 import com.ind4fibre.json.modelo.Alarme;
 import com.ind4fibre.json.modelo.Armazenamento;
@@ -46,8 +61,24 @@ public class ImportarController {
 	
 	@Autowired
 	private FTPService ftpService;
+	
+	@Autowired
+	private LeituraBracoRepository leituraBracoRepository;
+	
+	@Autowired
+	private AlarmeBracoRepository alarmeBracoRepository;
+	
+	@Autowired
+	private BracoRoboticoRepository bracoRoboticoRepository;
+	
+	@Autowired
+	private RecursoRepository recursoRepository;
+	
+	@Autowired
+	private SensorRepository sensorRepository;
 
 
+	@SuppressWarnings("unused")
 	@ApiOperation(value = "Recebe o arquivo JSON para importação na base de dados.", nickname="importarArquivoJson")
 	@RequestMapping(value = "/importarArquivoJson", produces = { "application/json" }, consumes = { "multipart/form-data" }, method = RequestMethod.POST)
 	@ApiImplicitParams({
@@ -72,7 +103,32 @@ public class ImportarController {
 			HttpServletRequest request) throws IOException {
 		
 		LOGGER.info("Iniciando importação de dados");
+		
+		LOGGER.info("Buscando dados basicos (tipos de sensores, bracos por ilha, recursos por ilha...");
+		final Sensor sensorPosition = sensorRepository.findByNomeMedicao("position");
+		final Sensor sensorVelocity = sensorRepository.findByNomeMedicao("velocity");
+		final Sensor sensorEffort = sensorRepository.findByNomeMedicao("effort");
+		final Sensor sensorTemperatura = sensorRepository.findByNomeMedicao("temperatura");
+		final Sensor sensorUmidade = sensorRepository.findByNomeMedicao("umidade");
+		final Sensor sensorIluminacao = sensorRepository.findByNomeMedicao("iluminacao");
+		final BracoRobotico bracoRobotico = (LocalDaSRAM.FLORIANOPOLIS.equals(localDaSRAM))?
+				bracoRoboticoRepository.findByNomeAndIlha("Braço Robótico", "UFSC"):
+					bracoRoboticoRepository.findByNomeAndIlha("Braço Robótico", "UFBA");
+		final Recurso recursoArmazenamento = (LocalDaSRAM.FLORIANOPOLIS.equals(localDaSRAM))?
+				recursoRepository.findByNomeAndIlha("Armazenamento","UFSC"):
+					recursoRepository.findByNomeAndIlha("Armazenamento","UFBA");
+		final Recurso recursoImp3D = (LocalDaSRAM.FLORIANOPOLIS.equals(localDaSRAM))?
+				recursoRepository.findByNomeAndIlha("Imp3D","UFSC"):
+					recursoRepository.findByNomeAndIlha("Imp3D","UFBA");
+		final Recurso recursoSala = (LocalDaSRAM.FLORIANOPOLIS.equals(localDaSRAM))?
+				recursoRepository.findByNomeAndIlha("Sala","UFSC"):
+					recursoRepository.findByNomeAndIlha("Sala","UFBA");
 
+		LOGGER.info("Limpando o banco de dados");
+		leituraBracoRepository.truncateCommit();
+		alarmeBracoRepository.truncateCommit();
+		
+				
 		LOGGER.info("Lendo arquivo da Impressora");
 		Reader readerPrinter = new InputStreamReader(filePrinter.getInputStream());
 		ArquivoJsonPrinter arquivoJsonPrinter = mapper.readValue(readerPrinter,new TypeReference<ArquivoJsonPrinter>() {});
@@ -81,11 +137,91 @@ public class ImportarController {
 		Reader readerRobot = new InputStreamReader(fileRobot.getInputStream());
 		ArquivoJsonRobot arquivoJsonRobot = mapper.readValue(readerRobot,new TypeReference<ArquivoJsonRobot>() {});
 		
+		
+		//################################################################## 
+		//###################### ROBOS #####################################
+		//################################################################## 
+		
 		List<Robo> robos = arquivoJsonRobot.getRobo();
 		LOGGER.info("Leituras de "+robos.size()+" robos");
 		
+		//Agrupando os dados de robo
+		Map<LocalDateTime, List<Robo>> leiturasBracoGroup = robos.stream().collect(Collectors.groupingBy(r -> r.getTimestamp()));
+		//Mapeando para objeto relacional
+		List<LeituraBraco> leiturasBraco = new ArrayList<LeituraBraco>();
+		leiturasBracoGroup.forEach(
+				(key,value)->{
+					LeituraBraco leituraBraco = new LeituraBraco();
+					leituraBraco.setData(key);
+					leituraBraco.setBracoRobotico(bracoRobotico);
+					value.stream().forEach(r->{
+						//coordenadas
+						leituraBraco.setCoordenadaX((r.getTopic().contentEquals("posX"))?r.getValue():leituraBraco.getCoordenadaX());
+						leituraBraco.setCoordenadaY((r.getTopic().contentEquals("posY"))?r.getValue():leituraBraco.getCoordenadaY());
+						leituraBraco.setCoordenadaZ((r.getTopic().contentEquals("posZ"))?r.getValue():leituraBraco.getCoordenadaZ());
+						if(leituraBraco.getCoordenadaX()!=null ||leituraBraco.getCoordenadaY()!=null ||leituraBraco.getCoordenadaZ()!=null) {
+							leituraBraco.setSensor(sensorPosition);
+						}
+						//juntas
+						leituraBraco.setShoulderLiftJoint((r.getTopic().contentEquals("joint1"))?r.getValue():leituraBraco.getShoulderLiftJoint());
+						leituraBraco.setShoulderPanJoint((r.getTopic().contentEquals("joint2"))?r.getValue():leituraBraco.getShoulderPanJoint());
+						leituraBraco.setElbowJoint((r.getTopic().contentEquals("joint3"))?r.getValue():leituraBraco.getElbowJoint());
+						leituraBraco.setWrist1Joint((r.getTopic().contentEquals("joint4"))?r.getValue():leituraBraco.getWrist1Joint());
+						leituraBraco.setWrist2Joint((r.getTopic().contentEquals("joint5"))?r.getValue():leituraBraco.getWrist2Joint());
+						leituraBraco.setWrist3Joint((r.getTopic().contentEquals("joint6"))?r.getValue():leituraBraco.getWrist3Joint());
+						if(leituraBraco.getShoulderLiftJoint()!=null ||leituraBraco.getShoulderPanJoint()!=null ||leituraBraco.getElbowJoint()!=null
+								||leituraBraco.getWrist1Joint()!=null ||leituraBraco.getWrist2Joint()!=null||leituraBraco.getWrist3Joint()!=null) {
+							leituraBraco.setSensor(sensorPosition);
+						}
+						
+						//velocidade (nao usada)
+						leituraBraco.setShoulderLiftJointVel((r.getTopic().contentEquals("vel1"))?r.getValue():leituraBraco.getShoulderLiftJointVel());
+						leituraBraco.setShoulderPanJointVel((r.getTopic().contentEquals("vel2"))?r.getValue():leituraBraco.getShoulderPanJointVel());
+						leituraBraco.setElbowJointVel((r.getTopic().contentEquals("vel3"))?r.getValue():leituraBraco.getElbowJointVel());
+						leituraBraco.setWrist1JointVel((r.getTopic().contentEquals("vel4"))?r.getValue():leituraBraco.getWrist1JointVel());
+						leituraBraco.setWrist2JointVel((r.getTopic().contentEquals("vel5"))?r.getValue():leituraBraco.getWrist2JointVel());
+						leituraBraco.setWrist3JointVel((r.getTopic().contentEquals("vel6"))?r.getValue():leituraBraco.getWrist3JointVel());
+						if(leituraBraco.getShoulderLiftJointVel()!=null ||leituraBraco.getShoulderPanJointVel()!=null ||leituraBraco.getElbowJointVel()!=null
+								||leituraBraco.getWrist1JointVel()!=null ||leituraBraco.getWrist2JointVel()!=null||leituraBraco.getWrist3JointVel()!=null) {
+							leituraBraco.setSensor(sensorPosition);
+						}
+						
+					});
+					leiturasBraco.add(leituraBraco);
+				});
+		//ordenado
+		List<LeituraBraco> sortedLeiturasBraco = leiturasBraco.stream().sorted(Comparator.comparing(LeituraBraco::getData)).collect(Collectors.toList());
+		LOGGER.info("Convertidas em "+sortedLeiturasBraco.size()+" objetos Leitura Braco");
+		LOGGER.info("Persistindo...");
+		//persistindo
+		sortedLeiturasBraco.forEach(r->leituraBracoRepository.saveCommit(r));
+		LOGGER.info("Persistidas "+sortedLeiturasBraco.size()+" entradas na tabela leitura_braco");
+		
+		//################################################################## 
+		//###################### ALARMES ###################################
+		//################################################################## 
 		List<Alarme> alarmes = arquivoJsonRobot.getAlarmes();
+		List<AlarmeBraco> alarmesBraco = new ArrayList<AlarmeBraco>();
 		LOGGER.info("Leituras de "+alarmes.size()+" alarmes");
+		alarmes.forEach(a->{
+			AlarmeBraco alarmeBraco = new AlarmeBraco();
+			alarmeBraco.setData(a.getTimestamp());
+			alarmeBraco.setValor(a.getValue());
+			alarmeBraco.setBracoRobotico(bracoRobotico);
+			alarmesBraco.add(alarmeBraco);
+		});
+		List<AlarmeBraco> sortedAlarmesBraco = alarmesBraco.stream().sorted(Comparator.comparing(AlarmeBraco::getData)).collect(Collectors.toList());
+		LOGGER.info("Convertidas em "+sortedAlarmesBraco.size()+" objetos Alarme Braco");
+
+		LOGGER.info("Persistindo...");
+		//persistindo
+		sortedAlarmesBraco.forEach(a->alarmeBracoRepository.saveCommit(a));
+		LOGGER.info("Persistidas "+sortedAlarmesBraco.size()+" entradas na tabela alarme_braco");
+		
+		
+		//################################################################## 
+		//###################### ALARMES ###################################
+		//################################################################## 
 		
 		List<Armazenamento> armazenamentos = arquivoJsonPrinter.getArmazenamento();
 		LOGGER.info("Leituras de "+armazenamentos.size()+" armazenamentos");
@@ -96,7 +232,7 @@ public class ImportarController {
 		List<Sala>  salas = arquivoJsonPrinter.getSala();
 		LOGGER.info("Leituras de "+salas.size()+" salas");
 		
-		//TODO inserir os dados nas respectivas tabelas
+		
 		
 		return ResponseEntity.ok().build();
 	}

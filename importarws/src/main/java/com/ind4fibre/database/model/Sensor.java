@@ -8,6 +8,7 @@ import java.util.List;
 
 
 @Entity
+@Table(name = "sensor", schema = "fibre")
 public class Sensor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
