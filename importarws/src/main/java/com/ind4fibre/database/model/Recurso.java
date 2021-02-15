@@ -1,11 +1,14 @@
 package com.ind4fibre.database.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -23,6 +26,9 @@ public class Recurso implements Serializable {
 	private String nome;
 
 	private String tipo;
+	
+	@OneToMany(mappedBy="recurso")
+	private List<LeituraRecurso> leituraRecursos = new ArrayList<LeituraRecurso>();
 
 	public Recurso() {
 	}
@@ -57,6 +63,28 @@ public class Recurso implements Serializable {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public List<LeituraRecurso> getLeituraRecursos() {
+		return leituraRecursos;
+	}
+
+	public void setLeituraRecursos(List<LeituraRecurso> leituraRecursos) {
+		this.leituraRecursos = leituraRecursos;
+	}
+	
+	public LeituraRecurso addLeituraRecurso(LeituraRecurso leituraRecurso) {
+		getLeituraRecursos().add(leituraRecurso);
+		leituraRecurso.setRecurso(this);
+
+		return leituraRecurso;
+	}
+
+	public LeituraRecurso removeLeituraRecurso(LeituraRecurso leituraRecurso) {
+		getLeituraRecursos().remove(leituraRecurso);
+		leituraRecurso.setRecurso(null);
+
+		return leituraRecurso;
 	}
 
 }

@@ -21,6 +21,9 @@ public class Sensor implements Serializable {
 
 	@OneToMany(mappedBy="sensor")
 	private List<LeituraBraco> leituraBracos = new ArrayList<LeituraBraco>();
+	
+	@OneToMany(mappedBy="sensor")
+	private List<LeituraRecurso> leituraRecursos = new ArrayList<LeituraRecurso>();
 
 	public Sensor() {
 	}
@@ -48,6 +51,14 @@ public class Sensor implements Serializable {
 	public void setLeituraBracos(List<LeituraBraco> leituraBracos) {
 		this.leituraBracos = leituraBracos;
 	}
+	
+	public List<LeituraRecurso> getLeituraRecursos() {
+		return leituraRecursos;
+	}
+
+	public void setLeituraRecursos(List<LeituraRecurso> leituraRecursos) {
+		this.leituraRecursos = leituraRecursos;
+	}
 
 	public LeituraBraco addLeituraBraco(LeituraBraco leituraBraco) {
 		getLeituraBracos().add(leituraBraco);
@@ -61,6 +72,20 @@ public class Sensor implements Serializable {
 		leituraBraco.setSensor(null);
 
 		return leituraBraco;
+	}
+	
+	public LeituraRecurso addLeituraRecurso(LeituraRecurso leituraRecurso) {
+		getLeituraRecursos().add(leituraRecurso);
+		leituraRecurso.setSensor(this);
+
+		return leituraRecurso;
+	}
+
+	public LeituraRecurso removeLeituraRecurso(LeituraRecurso leituraRecurso) {
+		getLeituraRecursos().remove(leituraRecurso);
+		leituraRecurso.setSensor(null);
+
+		return leituraRecurso;
 	}
 
 }

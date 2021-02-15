@@ -1,6 +1,6 @@
 package com.ind4fibre.controller;
 
-import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.time.LocalDateTime;
@@ -11,10 +11,14 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,11 +32,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ind4fibre.database.model.AlarmeBraco;
 import com.ind4fibre.database.model.BracoRobotico;
 import com.ind4fibre.database.model.LeituraBraco;
+import com.ind4fibre.database.model.LeituraRecurso;
 import com.ind4fibre.database.model.Recurso;
 import com.ind4fibre.database.model.Sensor;
 import com.ind4fibre.database.repository.AlarmeBracoRepository;
 import com.ind4fibre.database.repository.BracoRoboticoRepository;
 import com.ind4fibre.database.repository.LeituraBracoRepository;
+import com.ind4fibre.database.repository.LeituraRecursoRepository;
 import com.ind4fibre.database.repository.RecursoRepository;
 import com.ind4fibre.database.repository.SensorRepository;
 import com.ind4fibre.ftp.FTPService;
@@ -76,11 +82,12 @@ public class ImportarController {
 	
 	@Autowired
 	private SensorRepository sensorRepository;
+	
+	@Autowired
+	private LeituraRecursoRepository leituraRecursoRepository;
 
-
-	@SuppressWarnings("unused")
 	@ApiOperation(value = "Recebe o arquivo JSON para importação na base de dados.", nickname="importarArquivoJson")
-	@RequestMapping(value = "/importarArquivoJson", produces = { "application/json" }, consumes = { "multipart/form-data" }, method = RequestMethod.POST)
+	@RequestMapping(value = "/importarArquivoJson", produces = { "video/mp4" }, consumes = { "multipart/form-data" }, method = RequestMethod.POST)
 	@ApiImplicitParams({
 		@ApiImplicitParam(name = "localDaSRAM", 
 				allowMultiple = false, 
@@ -90,7 +97,7 @@ public class ImportarController {
 				value = "Local de onde advém os dados",
 				defaultValue = "FLORIANOPOLIS")
 	})
-	public ResponseEntity<Void> enviarPorArquivos(
+	public ResponseEntity<Resource> enviarPorArquivos(
 			@ApiParam(value = "O arquivo deve conter os dados de Armazenamento, Imp3D e Sala \r\n\n"
 					+ "Topicos: temperatura, umidade e iluminacao \r\n\n"
 					+ "no formato JSON")
@@ -100,7 +107,8 @@ public class ImportarController {
 					+ "no formato JSON") 
 			@RequestPart(value="fileRobot", required=false) MultipartFile fileRobot,
 			@RequestParam(value="localDaSRAM", required=true) LocalDaSRAM localDaSRAM,
-			HttpServletRequest request) throws IOException {
+			HttpServletRequest request, 
+			HttpServletResponse response) throws Exception {
 		
 		LOGGER.info("Iniciando importação de dados");
 		
@@ -127,6 +135,7 @@ public class ImportarController {
 		LOGGER.info("Limpando o banco de dados");
 		leituraBracoRepository.truncateCommit();
 		alarmeBracoRepository.truncateCommit();
+		leituraRecursoRepository.truncateCommit();
 		
 				
 		LOGGER.info("Lendo arquivo da Impressora");
@@ -194,7 +203,7 @@ public class ImportarController {
 		LOGGER.info("Convertidas em "+sortedLeiturasBraco.size()+" objetos Leitura Braco");
 		LOGGER.info("Persistindo...");
 		//persistindo
-		sortedLeiturasBraco.forEach(r->leituraBracoRepository.saveCommit(r));
+		sortedLeiturasBraco.forEach(lb->leituraBracoRepository.saveCommit(lb));
 		LOGGER.info("Persistidas "+sortedLeiturasBraco.size()+" entradas na tabela leitura_braco");
 		
 		//################################################################## 
@@ -215,35 +224,105 @@ public class ImportarController {
 
 		LOGGER.info("Persistindo...");
 		//persistindo
-		sortedAlarmesBraco.forEach(a->alarmeBracoRepository.saveCommit(a));
+		sortedAlarmesBraco.forEach(ab->alarmeBracoRepository.saveCommit(ab));
 		LOGGER.info("Persistidas "+sortedAlarmesBraco.size()+" entradas na tabela alarme_braco");
 		
 		
 		//################################################################## 
-		//###################### ALARMES ###################################
+		//###################### RECURSOS ##################################
 		//################################################################## 
 		
+		List<LeituraRecurso> leiturasRecurso = new ArrayList<LeituraRecurso>();
+
 		List<Armazenamento> armazenamentos = arquivoJsonPrinter.getArmazenamento();
 		LOGGER.info("Leituras de "+armazenamentos.size()+" armazenamentos");
-		
 		List<Imp3D> impressoras3D = arquivoJsonPrinter.getImp3D();
 		LOGGER.info("Leituras de "+impressoras3D.size()+" impressoras3D");
-		
 		List<Sala>  salas = arquivoJsonPrinter.getSala();
 		LOGGER.info("Leituras de "+salas.size()+" salas");
 		
+		armazenamentos.forEach(a->{
+			LeituraRecurso armazenamentoRecurso = new LeituraRecurso();
+			armazenamentoRecurso.setData(a.getTimestamp());
+			armazenamentoRecurso.setValor(a.getValue());
+			armazenamentoRecurso.setRecurso(recursoArmazenamento);
+			armazenamentoRecurso.setSensor(
+					(a.getTopic().contentEquals("temperatura"))?sensorTemperatura:
+						(a.getTopic().contentEquals("umidade"))?sensorUmidade:
+							(a.getTopic().contentEquals("iluminacao"))?sensorIluminacao:
+								null
+				);
+			leiturasRecurso.add(armazenamentoRecurso);
+		});
 		
+		impressoras3D.forEach(a->{
+			LeituraRecurso impressora3DRecurso = new LeituraRecurso();
+			impressora3DRecurso.setData(a.getTimestamp());
+			impressora3DRecurso.setValor(a.getValue());
+			impressora3DRecurso.setRecurso(recursoImp3D);
+			impressora3DRecurso.setSensor(
+					(a.getTopic().contentEquals("temperatura"))?sensorTemperatura:
+						(a.getTopic().contentEquals("umidade"))?sensorUmidade:
+							(a.getTopic().contentEquals("iluminacao"))?sensorIluminacao:
+								(a.getTopic().contentEquals("position"))?sensorPosition:
+									(a.getTopic().contentEquals("velocity"))?sensorVelocity:
+										(a.getTopic().contentEquals("effort"))?sensorEffort:
+					null
+				);
+			leiturasRecurso.add(impressora3DRecurso);
+		});
 		
-		return ResponseEntity.ok().build();
+		salas.forEach(a->{
+			LeituraRecurso salaRecurso = new LeituraRecurso();
+			salaRecurso.setData(a.getTimestamp());
+			salaRecurso.setValor(a.getValue());
+			salaRecurso.setRecurso(recursoSala);
+			salaRecurso.setSensor(
+					(a.getTopic().contentEquals("temperatura"))?sensorTemperatura:
+						(a.getTopic().contentEquals("umidade"))?sensorUmidade:
+							(a.getTopic().contentEquals("iluminacao"))?sensorIluminacao:
+								(a.getTopic().contentEquals("position"))?sensorPosition:
+									(a.getTopic().contentEquals("velocity"))?sensorVelocity:
+										(a.getTopic().contentEquals("effort"))?sensorEffort:
+					null
+				);
+			leiturasRecurso.add(salaRecurso);
+		});
+		List<LeituraRecurso> sortedLeiturasRecurso = leiturasRecurso.stream().sorted(Comparator.comparing(LeituraRecurso::getData)).collect(Collectors.toList());
+		LOGGER.info("Convertidas em "+sortedLeiturasRecurso.size()+" objetos Leitura Recurso ");
+		LOGGER.info("Persistindo...");
+		//persistindo
+		sortedLeiturasRecurso.forEach(lr->leituraRecursoRepository.saveCommit(lr));
+		LOGGER.info("Persistidas "+sortedLeiturasRecurso.size()+" entradas na tabela leitura_recurso");
+		
+		//TODO prover meio de saber que acabou de produzir o video
+		LOGGER.info("Baixando vídeo do ftp");
+		try {
+			return donwloadRetryable();
+		}catch(Exception e) {
+			return donwloadRetryable();
+		}
+	}
+	
+	private ResponseEntity donwloadRetryable() throws Exception {
+		InputStream is = ftpService.download("ILHA UFSC 3.mp4");
+		InputStreamResource resource = new InputStreamResource(is);
+		HttpHeaders headers = new HttpHeaders();
+		headers.add(HttpHeaders.CONTENT_TYPE, "video/mp4");
+		headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=video.mp4");
+		LOGGER.info("Disponibilizando vídeo do resultado");
+	    return ResponseEntity.ok()
+	            .headers(headers)
+	            .body(resource);
 	}
 	
 	
-	@ApiOperation(value = "Lista os arquivos no FTP", nickname="listarFTP")
-	@RequestMapping(value = "/listarArquivos", method = RequestMethod.GET)
-	public ResponseEntity<List<String>> listarVideos(HttpServletRequest request) throws Exception {
-		List<String> files = ftpService.leArquivos();
-		return ResponseEntity.ok(files);
-	}
+//	@ApiOperation(value = "Lista os arquivos no FTP", nickname="listarFTP")
+//	@RequestMapping(value = "/listarArquivos", method = RequestMethod.GET)
+//	public ResponseEntity<List<String>> listarVideos(HttpServletRequest request) throws Exception {
+//		List<String> files = ftpService.leArquivos();
+//		return ResponseEntity.ok(files);
+//	}
 
 
 
