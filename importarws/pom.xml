@@ -163,6 +163,14 @@
 		    <groupId>com.fasterxml.jackson.datatype</groupId>
 		    <artifactId>jackson-datatype-jsr310</artifactId>
 		</dependency>
+		<!-- FTP -->
+		<!-- mvn install:install-file -DgroupId=com.enterprisedt -DartifactId=myEdtFTPj -Dversion=1.5.3 -Dpackaging=jar -Dfile=/Users/filipemb/git/Ind4Fibre/importarws/lib/edtftpj.jar -->
+		<dependency>
+		    <groupId>com.enterprisedt</groupId>
+		    <artifactId>myEdtFTPj</artifactId>
+		    <version>1.5.3</version>
+		</dependency>
+				
 	</dependencies>
 
 	<!-- https://www.baeldung.com/executable-jar-with-maven https://docs.spring.io/spring-boot/docs/current/maven-plugin/usage.html 

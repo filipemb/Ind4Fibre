@@ -28,12 +28,14 @@ public class ImportarWs {
 	}
 }
 
-
 @Component
 class MyBean {
 
     @Value("${spring.datasource.url}")
-    private String prop;
+    private String dataSourceConnection;
+    
+    @Value("${ftp.host}")
+    private String ftpConnection;
 
     public MyBean() {
 
@@ -41,6 +43,9 @@ class MyBean {
 
     @PostConstruct
     public void init() {
-        System.out.println("================== " + prop + "================== ");
+        System.out.println("================== " + dataSourceConnection + "================== ");
+        System.out.println("================== " + ftpConnection + "================== ");
     }
 }
+
+
